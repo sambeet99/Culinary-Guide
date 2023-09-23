@@ -16,9 +16,9 @@ export class RecipeListComponent implements OnInit {
     this.recipes = this.recipeService.getResipces();
   }
 
-  @Output() recipeWasSelected = new EventEmitter<Recipe>();
+ // @Output() recipeWasSelected = new EventEmitter<Recipe>();
   //event accepted by its child has to pass up to its parent i.e. 2 level emit
-  onRecipeSelected(recipe: Recipe) {
-    this.recipeWasSelected.emit(recipe);
-  }
+  // onRecipeSelected(recipe: Recipe) {
+  //   this.recipeWasSelected.emit(recipe);
+  // }
 }

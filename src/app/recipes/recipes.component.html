@@ -3,12 +3,13 @@
         <!-- this recieved emitted event can call a method and assign event value to a variable
         but here we directly assigning value to variable selectedRecipe.
         little logic inside template. -->
-         <app-recipe-list (recipeWasSelected)="selectedRecipe = $event"></app-recipe-list>
+         <!-- <app-recipe-list (recipeWasSelected)="selectedRecipe = $event"></app-recipe-list> -->
+         <app-recipe-list></app-recipe-list>
     </div>
     <div class="col-md-7">
-        <!-- show selected recipe or else text message ; emitted event variable now passed down to 
+        <!-- show selected recipe or else text message ; emitted event variable now passed down to
         child comp. i.e. r-detail by data binding-->
-        <app-recipe-detail 
+        <app-recipe-detail
           *ngIf="selectedRecipe; else infoText"
           [recipe]="selectedRecipe"></app-recipe-detail>
         <ng-template #infoText>

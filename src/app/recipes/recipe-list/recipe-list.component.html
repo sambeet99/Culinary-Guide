@@ -5,12 +5,12 @@
 </div>
 <hr>
 <div class="row">
-    <div class="col-xs-12"> 
-        <!-- since its the parent class , it will send data (by data-binding) to child class i.e. recipe-item 
+    <div class="col-xs-12">
+        <!-- since its the parent class , it will send data (by data-binding) to child class i.e. recipe-item
               recipeEl is the parent recipe object and [recipe] is the child class variable which has already been declared.       -->
-        <app-recipe-item 
-          *ngFor="let recipeEl of recipes"
-          [recipe]="recipeEl"
-          (recipeSelected)="onRecipeSelected(recipeEl)"></app-recipe-item>
+        <app-recipe-item
+            *ngFor="let recipeEl of recipes"
+            [recipe]="recipeEl"></app-recipe-item>
+            <!-- (recipeSelected)="onRecipeSelected(recipeEl)"></app-recipe-item> -->
     </div>
 </div>
