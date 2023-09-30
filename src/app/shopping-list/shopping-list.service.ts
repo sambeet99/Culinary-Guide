@@ -17,4 +17,13 @@ export class ShoppingListService {
     this.ingradients.push(ingradient);
     this.ingradientsChanged.emit(this.ingradients.slice());
   }
+
+  addIngradients(ingradients: Ingradient[]) {
+    // for (let ingradient of ingradients) {
+    //   this.addIngradient(ingradient);
+    // }
+
+    this.ingradients.push(...ingradients); //spread operator ES6 feature.
+    this.ingradientsChanged.emit(this.ingradients.slice()); //everytime items added , emit event to get latest updated items..
+  }
 }

@@ -1,7 +1,9 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
 import { Ingradient } from '../shared/ingradient.model';
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
+@Injectable()
 export class RescipeService {
   recipeSelected = new EventEmitter<Recipe>();
   private recipes: Recipe[] = [
@@ -35,8 +37,13 @@ export class RescipeService {
     ),
   ];
 
+  constructor(private slservice: ShoppingListService) {}
   getResipces(): Recipe[] {
     // this.recipes points to original array and thats why we sned a copy in getter.
     return this.recipes.slice();
+  }
+
+  addIngradientsToShoppingList(ingradients: Ingradient[]) {
+    this.slservice.addIngradients(ingradients);
   }
 }
