@@ -16,6 +16,7 @@ export class RescipeService {
         new Ingradient('rice with water', 1),
         new Ingradient('bhaja', 1),
       ]
+
     ),
     new Recipe(
       'Abhada',
@@ -25,6 +26,7 @@ export class RescipeService {
         new Ingradient('ticket to puri', 1),
         new Ingradient('entry to mandir', 1),
       ]
+
     ),
     new Recipe(
       'veg navratna',
@@ -34,6 +36,7 @@ export class RescipeService {
         new Ingradient('different veggies', 1),
         new Ingradient('skill to cook', 1),
       ]
+
     ),
   ];
 
@@ -45,5 +48,8 @@ export class RescipeService {
 
   addIngradientsToShoppingList(ingradients: Ingradient[]) {
     this.slservice.addIngradients(ingradients);
+  }
+  getRecipe(index: number) {
+    return this.recipes.slice()[index];
   }
 }

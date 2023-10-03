@@ -9,13 +9,14 @@
     <div class="col-md-7">
         <!-- show selected recipe or else text message ; emitted event variable now passed down to
         child comp. i.e. r-detail by data binding-->
-        <app-recipe-detail
+        <!-- <app-recipe-detail
           *ngIf="selectedRecipe; else infoText"
           [recipe]="selectedRecipe"></app-recipe-detail>
         <ng-template #infoText>
             <p>
                 please select a Recipe..!!
             </p>
-        </ng-template>
+        </ng-template> -->
+        <router-outlet></router-outlet>
     </div>
 </div>

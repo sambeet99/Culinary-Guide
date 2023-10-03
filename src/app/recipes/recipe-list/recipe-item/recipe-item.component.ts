@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { Recipe } from '../../recipe.model';
-import { RescipeService } from '../../recipe.service';
 
 @Component({
   selector: 'app-recipe-item',
@@ -9,7 +8,7 @@ import { RescipeService } from '../../recipe.service';
   styleUrls: ['./recipe-item.component.css'],
 })
 export class RecipeItemComponent implements OnInit {
-  constructor(private recipeService: RescipeService) {}
+  constructor() {}
   // Recieves recipe object (each recipe of recipe array in recipe list component)
   // and assign it to a variable of type Recipe model (similar to POJO)
   //Since recipe list compo. is parent here hence that will send data to child
@@ -20,11 +19,11 @@ export class RecipeItemComponent implements OnInit {
   // coz recipes (grand parent) then will then display recipe detail component.  (2-level event emit)
 
   //@Output() recipeSelected = new EventEmitter<void>(); now we will use cross component communication instead of long chain of even emit
-  onSelected() {
-    // this.recipeSelected.emit();
+  // onSelected() {
+  //   // this.recipeSelected.emit();
 
-    this.recipeService.recipeSelected.emit(this.recipe);
-  }
+  //   this.recipeService.recipeSelected.emit(this.recipe);
+  // }
 
   ngOnInit(): void {}
 }
