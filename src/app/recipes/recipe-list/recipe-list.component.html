@@ -7,7 +7,8 @@
 <div class="row">
     <div class="col-xs-12">
         <!-- since its the parent class , it will send data (by data-binding) to child class i.e. recipe-item
-              recipeEl is the parent recipe object and [recipe] is the child class variable which has already been declared.       -->
+              recipeEl is the parent recipe object and [recipe] is the child class variable which has already been declared.
+              index is reserve word in ts , used along with for loop to keep track of index and it represents the current index   -->
         <app-recipe-item
             *ngFor="let recipeEl of recipes; let i=index;"
             [recipe]="recipeEl"
