@@ -5,18 +5,21 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { AppComponent } from './app.component';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: '/recipes', pathMatch: 'full' },
   {
     path: 'recipes',
     component: RecipesComponent,
     children: [
       { path: '', component: RecipeStartComponent },
+      { path: 'new', component: RecipeEditComponent }, //new and :id both are child ,except "new" anything will be treated as dynamic param
       { path: ':id', component: RecipeDetailComponent },
+      { path: ':id/edit', component: RecipeEditComponent },
     ],
   },
   { path: 'shopping-list', component: ShoppingListComponent },
-  { path: '', redirectTo: '/recipes', pathMatch: 'full' },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
