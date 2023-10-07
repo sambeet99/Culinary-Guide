@@ -13,6 +13,7 @@ export class RecipeItemComponent implements OnInit {
   // and assign it to a variable of type Recipe model (similar to POJO)
   //Since recipe list compo. is parent here hence that will send data to child
   @Input() recipe: Recipe;
+  @Input() index: number; // get the value from R-list component.
 
   //select any single item on html and that will trigger function to emit event to  parent i.e. recipes-list
   //again recipe-list will emit event to its parent i.e. recipes compo.
