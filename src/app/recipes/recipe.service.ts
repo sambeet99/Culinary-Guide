@@ -5,7 +5,6 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @Injectable()
 export class RescipeService {
-  recipeSelected = new EventEmitter<Recipe>();
   private recipes: Recipe[] = [
     new Recipe(
       'pakhala',
@@ -16,7 +15,6 @@ export class RescipeService {
         new Ingradient('rice with water', 1),
         new Ingradient('bhaja', 1),
       ]
-
     ),
     new Recipe(
       'Abhada',
@@ -26,7 +24,6 @@ export class RescipeService {
         new Ingradient('ticket to puri', 1),
         new Ingradient('entry to mandir', 1),
       ]
-
     ),
     new Recipe(
       'veg navratna',
@@ -36,7 +33,6 @@ export class RescipeService {
         new Ingradient('different veggies', 1),
         new Ingradient('skill to cook', 1),
       ]
-
     ),
   ];
 

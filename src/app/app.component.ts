@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: any;
 
-  loadedFeature: string = 'recipe';
+  // loadedFeature: string = 'recipe';
 
-  //feature is the event (of type string) captured by html and assigned it to another variable loadedfeature.
-  onNavigate(feature: string) {
-    this.loadedFeature = feature;
-  }
+  // //feature is the event (of type string) captured by html and assigned it to another variable loadedfeature.
+  // onNavigate(feature: string) {
+  //   this.loadedFeature = feature;
+  // }
 }

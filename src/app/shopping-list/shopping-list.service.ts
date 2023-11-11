@@ -1,8 +1,8 @@
-import { EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Ingradient } from '../shared/ingradient.model';
 
 export class ShoppingListService {
-  ingradientsChanged = new EventEmitter<Ingradient[]>();
+  ingradientsChanged = new Subject<Ingradient[]>();
 
   private ingradients: Ingradient[] = [
     new Ingradient('Pokhalo thali', 2),
@@ -15,7 +15,7 @@ export class ShoppingListService {
 
   addIngradient(ingradient: Ingradient) {
     this.ingradients.push(ingradient);
-    this.ingradientsChanged.emit(this.ingradients.slice());
+    this.ingradientsChanged.next(this.ingradients.slice());
   }
 
   addIngradients(ingradients: Ingradient[]) {
@@ -24,6 +24,6 @@ export class ShoppingListService {
     // }
 
     this.ingradients.push(...ingradients); //spread operator ES6 feature.
-    this.ingradientsChanged.emit(this.ingradients.slice()); //everytime items added , emit event to get latest updated items..
+    this.ingradientsChanged.next(this.ingradients.slice()); //everytime items added , emit event to get latest updated items..
   }
 }
